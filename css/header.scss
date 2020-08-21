@@ -186,3 +186,8 @@
         }
     }
 }
+@media (max-width: 767px) {
+    body.lock {
+        overflow: hidden;
+    }
+}
