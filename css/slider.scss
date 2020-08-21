@@ -1,0 +1,83 @@
+@import './mixin.scss';
+
+.slider {
+    background-color: #f7f7f7;
+    padding: 120px 0 120px 0;
+
+    &__body {}
+
+    &__item {
+        text-align: center;
+    }
+
+    &__icon {
+        margin-bottom: 35px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        color: #353738;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+
+        span {
+            color: #848789;
+            font-family: "Lato Light";
+            font-weight: 300;
+            letter-spacing: 1.8px;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        color: #848789;
+        font-family: 'Lato', sans-serif;
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    &__links {}
+}
+
+
+.slick-slider {
+    position: relative;
+
+    .slick-list {
+        overflow: hidden;
+    }
+
+    .slick-track {
+        @include flexbox();
+        align-items: center;
+    }
+
+    .slick-dots {
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        padding: 100px 0 0 0;
+
+        li {
+            margin: 0 5px;
+
+            button {
+                font-size: 0;
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+                border: 1px solid #c8c8c8;
+                background-color: transparent;
+            }
+
+            &.slick-active {
+                button {
+                    background-color: #c8c8c8;
+                }
+            }
+        }
+    }
+}

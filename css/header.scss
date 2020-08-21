@@ -1,0 +1,188 @@
+@import './mixin.scss';
+
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 35px;
+    z-index: 30;
+
+    &__row {
+        @include flexbox();
+        justify-content: center;
+        align-items: center;
+        height: 85px;
+    }
+
+    &__menu {}
+
+    &__logo {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0) rotate(0);
+        z-index: 2;
+    }
+
+    @media (max-width: 767px) {
+        top: 15px
+    }
+}
+
+.menu {
+    &__icon {}
+
+    &__body {}
+
+    &__list {
+        @include flexbox();
+
+        li {
+            position: relative;
+            padding: 0px 37.5px;
+
+            &:nth-child(2) {
+                padding-right: 110px;
+            }
+
+            &:nth-child(3) {
+                padding-left: 110px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 3px;
+                border-radius: 50%;
+                background-color: #4d4959;
+                right: 0px;
+                bottom: 2px;
+            }
+
+            &:nth-child(2),
+            &:nth-child(4) {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__link {
+        height: 10px;
+        color: #4d4959;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2.6px;
+        font-family: 'Lato', sans-serif;
+    }
+
+    @media (max-width: 767px) {
+        &__body {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: -100%;
+            left: 0;
+            background-color: #4d4959;
+            padding-top: 150px;
+            overflow: auto;
+            transition: all 0.3s ease 0.3s;
+            &.active {
+                top: 0;
+            }
+        }
+
+        &__list {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                padding: 0 0 35px 0;
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    padding: 0 0 35px 0;
+                }
+
+                &::after,
+                &:before {
+                    content: '';
+                    position: absolute;
+                    height: 4px;
+                    width: 4px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    right: 50%;
+                    top: 34px;
+                    bottom: 2px;
+                    margin: 0px -2px 0px 0px;
+                }
+            }
+        }
+
+        &__link {
+            font-size: 20px;
+            color: white;
+        }
+
+    }
+}
+
+.icon-menu {
+    @media (max-width: 767px) {
+        display: block;
+        position: absolute;
+        top: 10px;
+        width: 30px;
+        right: 10px;
+        height: 15px;
+        cursor: pointer;
+        z-index: 5;
+
+        span {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #4d4959;
+            transition: all 0.3s ease 0s;
+            z-index: 2;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 6px;
+            }
+
+            &:nth-child(3) {
+                bottom: 0;
+            }
+        }
+
+        &.active {
+            span {
+                background-color: #fff;
+
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: 7px;
+                }
+
+                &:nth-child(2) {
+                    transform: scale(0);
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    bottom: 7px;
+                }
+            }
+        }
+    }
+}

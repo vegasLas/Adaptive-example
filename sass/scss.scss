@@ -1,0 +1,48 @@
+@import './nullstyle.scss';
+@import '../css/new.scss';
+@import '../css/header.scss';
+@import '../css/content.scss';
+@import '../css/ibg.scss';
+@import '../css/album.scss';
+@import '../css/brand.scss';
+@import '../css/mixin.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import '../css/slider.scss';
+@import '../css/subscribe.scss';
+@import '../css/footer.scss';
+
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.container {
+    max-width: 1130px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include flexbox();
+    flex-direction: column;
+}
+
+.main-screen {
+    flex: 1 0 100%;
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.content {}
